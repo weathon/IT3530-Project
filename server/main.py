@@ -2,6 +2,12 @@ from typing import Optional
 from fastapi import FastAPI
 import os
 
+from RPi import GPIO
+import time
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(20, GPIO.OUT)
+pin = GPIO.PWM(20, 500)
+
 app = FastAPI()
 
 @app.get("/getMonths")
@@ -20,3 +26,8 @@ def list_videos(month,day):
     video_list = os.listdir("../record/videos/%s/%s" % (month,day))
     return video_list
 
+@app.get("/beep")
+def beep():
+    pin.start(10) # Duty cycle [14]
+    time.sleep(5)
+    pin.stop()
