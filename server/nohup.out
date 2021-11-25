@@ -466,3 +466,83 @@ INFO:     Finished server process [1201]
 INFO:     Started server process [1386]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/record.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1386]
+./main.py:8: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1459]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/record.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1459]
+./main.py:8: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1465]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/record.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1465]
+./main.py:8: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1471]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/record.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1471]
+./main.py:8: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1476]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/record.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1476]
+./main.py:8: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1656]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/images.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1656]
+./main.py:8: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1738]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/images.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1738]
+./main.py:8: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1742]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/images.py']'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1742]
+./main.py:8: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1765]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
