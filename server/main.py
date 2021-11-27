@@ -13,10 +13,12 @@ import random
 app = FastAPI()
 
 def checkToken(token):
+   if token == None:
+       return 'None'
    part_1,part_2 = token.split("--")
 
    # Check if expired
-   if(int(part_1.split("****")[0])>=time.time):
+   if(int(part_1.split("****")[0])>=time.time()):
        return "Expired"
 
    # Check if faked
@@ -26,6 +28,8 @@ def checkToken(token):
 
    with open("../key.n","r") as f:
         n = int(f.read())
+   
+   signature = int(part_2)
    hashFromSignature = pow(signature, e, n)
    if hash != hashFromSignature:
         return "Faked"
