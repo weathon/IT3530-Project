@@ -83,63 +83,16 @@ def read_root(monthAndDayAndHourAndMin,jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
         return "ERROR"
-    ls = os.listdir("./images/"+monthAndDayAndHourAndMin)
-    return ls
-
+    return FileResponse("./images/"+monthAndDayAndHourAndMin)
+    
 
 @app.get("/getImage")
 def read_root(monthAndDayAndHourAndMinAndImageID,jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
         return "ERROR"
-    return FileResponse("./images/"+monthAndDayAndHourAndMinAndImageID)
-
-
-
-# Audio
-
-@app.get("/getMonths_audio")
-def read_root(jwt_token: Optional[str] = Cookie(None)):
-    # List the videos dir and return the list
-    login_stat = checkToken(jwt_token)
-    if login_stat != "OK":
-        return login_stat
-    ls = os.listdir("./audio")
+    ls = os.listdir("./images/"+monthAndDayAndHourAndMinAndImageID)
     return ls
-
-@app.get("/getDays_audio")
-def read_root(month,jwt_token: Optional[str] = Cookie(None)):
-    # List the videos dir and return the list
-    if checkToken(jwt_token) != "OK":
-        return "ERROR"
-    ls = os.listdir("./audio/"+month)
-    return ls
-
-@app.get("/getHours_audio")
-def read_root(monthAndDay,jwt_token: Optional[str] = Cookie(None)):
-    # List the videos dir and return the list
-    if checkToken(jwt_token) != "OK":
-        return "ERROR"
-    ls = os.listdir("./audio/"+monthAndDay)
-    return ls
-
-@app.get("/getMins_audio")
-def read_root(monthAndDayAndHour,jwt_token: Optional[str] = Cookie(None)):
-    # List the videos dir and return the list
-    if checkToken(jwt_token) != "OK":
-        return "ERROR"
-    return FileResponse("./images/"+monthAndDayAndHour)
-    
-
-
-@app.get("/getAudio")
-def read_root(monthAndDayAndHourAndMin,jwt_token: Optional[str] = Cookie(None)):
-    # List the videos dir and return the list
-    if checkToken(jwt_token) != "OK":
-        return "ERROR"
-    ls = os.listdir("./audio/"+monthAndDayAndHourAndMin)
-    return ls
-
 
 @app.get("/beep")
 def beep(jwt_token: Optional[str] = Cookie(None)):
