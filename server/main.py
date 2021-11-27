@@ -118,9 +118,7 @@ for i in range(97,122):
 
 from hashlib import sha512
 @app.post("/getToken")
-def getToken(response: Response, psw: str = Form(...), jwt_token: Optional[str] = Cookie(None)):
-    if checkToken(jwt_token) != "OK":
-        return "ERROR"
+def getToken(response: Response, psw: str = Form(...)):
     if sha512((psw + "udfafgfywyftwewtfegft653rf57twgedjhnsbccvfratkedyuhwfegfdtkwygcfwe5tcvwgkycgtw").encode()).hexdigest() != \
             "15e7208a9f5d4525aa02885d7654c5e982da73cf2447682b0c285eabfec2753855c4fe5fc0b2767e27d8515f59c66a56af8b2efcf44e25915b0dc83cbbb9315b":
                 response.status_code = 403

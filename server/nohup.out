@@ -860,3 +860,20 @@ DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
 DEBUG:multipart.multipart:Calling on_field_end with no data
 DEBUG:multipart.multipart:Calling on_end with no data
 INFO:     10.20.40.10:0 - "POST /getToken HTTP/1.1" 200 OK
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [2284]
+INFO:uvicorn.error:Finished server process [2284]
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [2340]
+INFO:uvicorn.error:Started server process [2340]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
