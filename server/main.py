@@ -92,9 +92,19 @@ def read_root(monthAndDayAndHour,jwt_token: Optional[str] = Cookie(None)):
     html = html.replace("{{JSONDATA}}",str(ls)).replace("{{imagesOrAudio}}",'images').replace("{{before}}",monthAndDayAndHour)
     return html
 
+@app.get("/getImages", response_class=HTMLResponse) 
+def read_root(monthAndDayAndHourAndMin, jwt_token: Optional[str] = Cookie(None)):
+    if checkToken(jwt_token) != "OK":
+        return "LOGIN ERROR"
+    ls = os.listdir("./images/"+monthAndDayAndHourAndMin)
+    f = open("./client/getlist.html","r")
+    html = f.read()
+    f.close()  
+    html = html.replace("{{JSONDATA}}",str(ls)).replace("{{imagesOrAudio}}",'images').replace("{{before}}",monthAndDayAndHourAndMin)
+    return html
 
 @app.get("/getImage")
-def read_root(monthAndDayAndHourAndMinAndImageID,jwt_token: Optional[str] = Cookie(None)):
+def read_root(monthAndDayAndHourAndMinAndImageID, jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
         return "LOGIN ERROR"

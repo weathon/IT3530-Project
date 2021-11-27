@@ -16,7 +16,7 @@
 
         <ion-header>
             <ion-toolbar>
-                <ion-title>{{imagesOrAudio}}</ion-title>
+                <ion-title>Audio</ion-title>
             </ion-toolbar>
         </ion-header>
         <ion-content>
@@ -34,7 +34,7 @@
     myJson = {{JSONDATA}}
     for (var i = 0; i < myJson.length; i++) {
         myjson = myJson[i]
-        document.getElementById("list").innerHTML += `<img src="/getImage?monthAndDayAndHourAndMinAndImageID={{before}}/${myjson}"></img>`
+        document.getElementById("list").innerHTML += `<ion-item href="/getImages?monthAndDayAndHourAndMin={{before}}/${myjson}"><ion-icon name='folder-outline'></ion-icon><ion-label>&nbsp; ${myjson}</ion-label></ion-item>`
     }
 
 
