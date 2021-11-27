@@ -175,6 +175,7 @@ def read_root(monthAndDayAndHourAndMin,jwt_token: Optional[str] = Cookie(None)):
 def beep(jwt_token: Optional[str] = Cookie(None)):
     if checkToken(jwt_token) != "OK":
         return "LOGIN ERROR"
+    GPIO.setmode(GPIO.BCM)
     GPIO.setup(20, GPIO.OUT)
     pin = GPIO.PWM(20, 600)
     pin.start(50) # Duty cycle [14]
