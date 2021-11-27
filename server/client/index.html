@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+</head>
+
+<body>
+    <ion-app>
+        <ion-tabs>
+            <ion-tab tab="Images">
+                <ion-header>
+                    <ion-toolbar>
+                        <ion-title>Images</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+                <ion-content>
+                    <ion-list id='imageList'>
+
+                    </ion-list>
+                </ion-content>
+            </ion-tab>
+
+            <ion-tab tab="Audio">
+                <ion-header>
+                    <ion-toolbar>
+                        <ion-title>Audio</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+                <ion-content>
+                    <ion-list id='audioList'>
+
+                    </ion-list>
+                </ion-content>
+            </ion-tab>
+
+
+            <ion-tab tab="Actions">
+                <ion-header>
+                    <ion-toolbar>
+                        <ion-title>Actions</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+                <ion-content>
+                    <ion-page>
+                        <ion-item>
+                            <ion-lable>Beep will take about 5 seconds and Show Text will take about 20 seconds
+                            </ion-lable>
+                        </ion-item>
+                        <ion-button expand="full" shape="round" onclick="beep();">Beep</ion-button>
+                        <ion-button expand="full" shape="round" onclick="text();">Show Text</ion-button>
+			<ion-button expand="full" shape="round" onclick='window.location="/login"'>Log In</ion-button>
+
+                    </ion-page>
+
+                </ion-content>
+            </ion-tab>
+
+            <ion-tab-bar slot="bottom">
+                <ion-tab-button tab="Images">
+                    <ion-label>Images</ion-label>
+                    <ion-icon name="aperture-outline"></ion-icon>
+                </ion-tab-button>
+                <ion-tab-button tab="Audio">
+                    <ion-label>Audio</ion-label>
+                    <ion-icon name="mic-outline"></ion-icon>
+                </ion-tab-button>
+                <ion-tab-button tab="Actions">
+                    <ion-label>Actions</ion-label>
+                    <ion-icon name="dice-outline"></ion-icon>
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
+
+    </ion-app>
+
+</body>
+<script>
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Text_formatting
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", '/getMonths_images', true);
+
+    xhr.onload = function () {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            for (var i = 0; i < JSON.parse(this.response).length; i++) {
+                document.getElementById("imageList").innerHTML += `<ion-item><ion-icon name='folder-outline'></ion-icon><ion-label>&nbsp; ${JSON.parse(this.response)[i]}</ion-label></ion-item>`
+            }
+        }
+        else {
+            alert("Error");
+        }
+    }
+    xhr.send();
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", '/getMonths_audio', true);
+
+    xhr.onload = function () {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            for (var i = 0; i < JSON.parse(this.response).length; i++) {
+                document.getElementById("audioList").innerHTML += `<ion-item><ion-icon name='folder-outline'></ion-icon><ion-label>&nbsp; ${JSON.parse(this.response)[i]}</ion-label></ion-item>`
+            }
+        }
+        else {
+            alert("Error");
+        }
+    }
+    xhr.send();
+    function beep() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", '/beep', true);
+
+        xhr.onload = function () {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            }
+            else
+                alert("Error");
+        }
+        xhr.send();
+    }
+    function text() {
+        text = prompt("What you want to show")
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", '/text', true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        xhr.onload = function () {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            }
+            else
+                alert("Error");
+        }
+        xhr.send("Text=" + text);
+
+    }
+
+</script>
+
+</html>

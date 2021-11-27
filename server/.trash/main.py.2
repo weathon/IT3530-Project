@@ -7,7 +7,7 @@ from RPi import GPIO
 import time
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(20, GPIO.OUT)
-#pin = GPIO.PWM(20, 600)
+pin = GPIO.PWM(20, 500)
 import random
 
 app = FastAPI()
@@ -50,7 +50,7 @@ def read_root(jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     login_stat = checkToken(jwt_token)
     if login_stat != "OK":
-        return "LOGIN ERROR"
+        return login_stat
     ls = os.listdir("./images")
     return ls
 
@@ -58,7 +58,7 @@ def read_root(jwt_token: Optional[str] = Cookie(None)):
 def read_root(month,jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
-        return "LOGIN ERROR"
+        return "ERROR"
     ls = os.listdir("./images/"+month)
     return ls
 
@@ -66,7 +66,7 @@ def read_root(month,jwt_token: Optional[str] = Cookie(None)):
 def read_root(monthAndDay,jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
-        return "LOGIN ERROR"
+        return "ERROR"
     ls = os.listdir("./images/"+monthAndDay)
     return ls
 
@@ -74,7 +74,7 @@ def read_root(monthAndDay,jwt_token: Optional[str] = Cookie(None)):
 def read_root(monthAndDayAndHour,jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
-        return "LOGIN ERROR"
+        return "ERROR"
     ls = os.listdir("./images/"+monthAndDayAndHour)
     return ls
 
@@ -82,7 +82,7 @@ def read_root(monthAndDayAndHour,jwt_token: Optional[str] = Cookie(None)):
 def read_root(monthAndDayAndHourAndMin,jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
-        return "LOGIN ERROR"
+        return "ERROR"
     ls = os.listdir("./images/"+monthAndDayAndHourAndMin)
     return ls
 
@@ -91,7 +91,7 @@ def read_root(monthAndDayAndHourAndMin,jwt_token: Optional[str] = Cookie(None)):
 def read_root(monthAndDayAndHourAndMinAndImageID,jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
-        return "LOGIN ERROR"
+        return "ERROR"
     return FileResponse("./images/"+monthAndDayAndHourAndMinAndImageID)
 
 
@@ -103,7 +103,7 @@ def read_root(jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     login_stat = checkToken(jwt_token)
     if login_stat != "OK":
-        return "LOGIN ERROR"
+        return login_stat
     ls = os.listdir("./audio")
     return ls
 
@@ -111,7 +111,7 @@ def read_root(jwt_token: Optional[str] = Cookie(None)):
 def read_root(month,jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
-        return "LOGIN ERROR"
+        return "ERROR"
     ls = os.listdir("./audio/"+month)
     return ls
 
@@ -119,7 +119,7 @@ def read_root(month,jwt_token: Optional[str] = Cookie(None)):
 def read_root(monthAndDay,jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
-        return "LOGIN ERROR"
+        return "ERROR"
     ls = os.listdir("./audio/"+monthAndDay)
     return ls
 
@@ -127,7 +127,7 @@ def read_root(monthAndDay,jwt_token: Optional[str] = Cookie(None)):
 def read_root(monthAndDayAndHour,jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
-        return "LOGIN ERROR"
+        return "ERROR"
     return FileResponse("./images/"+monthAndDayAndHour)
     
 
@@ -136,7 +136,7 @@ def read_root(monthAndDayAndHour,jwt_token: Optional[str] = Cookie(None)):
 def read_root(monthAndDayAndHourAndMin,jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
-        return "LOGIN ERROR"
+        return "ERROR"
     ls = os.listdir("./audio/"+monthAndDayAndHourAndMin)
     return ls
 
@@ -144,16 +144,15 @@ def read_root(monthAndDayAndHourAndMin,jwt_token: Optional[str] = Cookie(None)):
 @app.get("/beep")
 def beep(jwt_token: Optional[str] = Cookie(None)):
     if checkToken(jwt_token) != "OK":
-        return "LOGIN ERROR"
-    pin = GPIO.PWM(20, 600)
-    pin.start(50) # Duty cycle [14]
+        return "ERROR"
+    pin.start(10) # Duty cycle [14]
     time.sleep(5)
     pin.stop()
 
 @app.post("/text")
-def text(Text: str = Form(...),jwt_token: Optional[str] = Cookie(None)):
+def text(Text,jwt_token: Optional[str] = Cookie(None)):
     if checkToken(jwt_token) != "OK":
-        return "LOGIN ERROR"
+        return "ERROR"
     eink_lib.show(Text)
 
 charList = []
