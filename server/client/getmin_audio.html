@@ -34,7 +34,7 @@
     myJson = {{JSONDATA}}
     for (var i = 0; i < myJson.length; i++) {
         myjson = myJson[i]
-        document.getElementById("list").innerHTML += `<ion-item href="/getMins_image?monthAndDayAndHour={{before}}/${myjson}"><ion-icon name='folder-outline'></ion-icon><ion-label>&nbsp; ${myjson}</ion-label></ion-item>`
+        document.getElementById("list").innerHTML += `<ion-item href="/getAudio?monthAndDayAndHourAndMin={{before}}/${myjson}"><ion-icon name='folder-outline'></ion-icon><ion-label>&nbsp; ${myjson}</ion-label></ion-item>`
     }
 
 
