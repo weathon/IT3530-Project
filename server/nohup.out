@@ -877,3 +877,22 @@ INFO:     Waiting for application startup.
 INFO:uvicorn.error:Waiting for application startup.
 INFO:     Application startup complete.
 INFO:uvicorn.error:Application startup complete.
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.41.203:0 - "POST /getToken HTTP/1.1" 200 OK
+INFO:     10.20.41.203:0 - "GET /getMonths HTTP/1.1" 404 Not Found
+INFO:     10.20.41.203:0 - "GET /getMonths_image HTTP/1.1" 404 Not Found
+INFO:     10.20.41.203:0 - "GET /getMonths_image HTTP/1.1" 404 Not Found
+INFO:     10.20.41.203:0 - "GET /getMonths_images HTTP/1.1" 200 OK
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [2340]
+INFO:uvicorn.error:Finished server process [2340]

@@ -19,7 +19,7 @@ def checkToken(token):
    part_1,part_2 = token.split("--")
 
    # Check if expired
-   if(int(part_1.split("****")[0])>=time.time()):
+   if(int(part_1.split("****")[0])<time.time()):
        return "Expired"
 
    # Check if faked
