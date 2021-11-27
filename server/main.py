@@ -5,7 +5,7 @@ from fastapi.responses import HTMLResponse, FileResponse
 import eink_lib
 from RPi import GPIO
 import time
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM) 
 GPIO.setup(20, GPIO.OUT)
 #pin = GPIO.PWM(20, 600)
 import random

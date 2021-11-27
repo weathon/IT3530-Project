@@ -2449,3 +2449,1454 @@ INFO:     10.20.41.203:0 - "POST /getToken HTTP/1.1" 200 OK
 INFO:     10.20.41.203:0 - "GET / HTTP/1.1" 200 OK
 INFO:     10.20.41.203:0 - "GET /getMonths_images HTTP/1.1" 200 OK
 INFO:     10.20.41.203:0 - "GET /getMonths_audio HTTP/1.1" 200 OK
+INFO:     192.168.0.2:60255 - "GET /getImage/11/27/0/46/14.jpg HTTP/1.1" 404 Not Found
+INFO:     192.168.0.2:60256 - "GET /getImage?11/27/0/46/14.jpg HTTP/1.1" 422 Unprocessable Entity
+INFO:     192.168.0.2:60274 - "GET /getImage?monthAndDayAndHourAndMinAndImageID=11/27/0/46/14.jpg HTTP/1.1" 200 OK
+INFO:     192.168.0.2:60628 - "GET /getImage?monthAndDayAndHourAndMinAndImageID=11/27/0/46/16.jpg HTTP/1.1" 200 OK
+INFO:     192.168.0.2:60629 - "GET /login HTTP/1.1" 200 OK
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     192.168.0.2:60629 - "POST /getToken HTTP/1.1" 422 Unprocessable Entity
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     192.168.0.2:60629 - "POST /getToken HTTP/1.1" 422 Unprocessable Entity
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     192.168.0.2:60629 - "POST /getToken HTTP/1.1" 200 OK
+INFO:     192.168.0.2:60629 - "GET / HTTP/1.1" 200 OK
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     192.168.0.2:60629 - "GET /getMonths_images HTTP/1.1" 200 OK
+INFO:     192.168.0.2:60655 - "GET /getMonths_audio HTTP/1.1" 200 OK
+INFO:     192.168.0.2:60655 - "GET /getImage?monthAndDayAndHourAndMinAndImageID=11/27/0/46/16.jpg HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 282, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: './images/11/27/0/46/16.jpg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 64, in app
+    await response(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 285, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path ./images/11/27/0/46/16.jpg does not exist.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 282, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: './images/11/27/0/46/16.jpg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 64, in app
+    await response(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 285, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path ./images/11/27/0/46/16.jpg does not exist.
+INFO:     192.168.0.2:60677 - "GET /getImage?monthAndDayAndHourAndMinAndImageID=11/27/0/46/17.jpg HTTP/1.1" 200 OK
+INFO:     192.168.0.2:60739 - "GET /getImage?monthAndDayAndHourAndMinAndImageID=11/27/0/46/19.jpg HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 282, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: './images/11/27/0/46/19.jpg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 64, in app
+    await response(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 285, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path ./images/11/27/0/46/19.jpg does not exist.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 282, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: './images/11/27/0/46/19.jpg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 64, in app
+    await response(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 285, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path ./images/11/27/0/46/19.jpg does not exist.
+INFO:     192.168.0.2:60740 - "GET /getImage?monthAndDayAndHourAndMinAndImageID=11/27/0/46/20.jpg HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 282, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: './images/11/27/0/46/20.jpg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 64, in app
+    await response(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 285, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path ./images/11/27/0/46/20.jpg does not exist.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 282, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: './images/11/27/0/46/20.jpg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 64, in app
+    await response(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 285, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path ./images/11/27/0/46/20.jpg does not exist.
+INFO:     192.168.0.2:60765 - "GET /getImage?monthAndDayAndHourAndMinAndImageID=11/27/0/46/21.jpg HTTP/1.1" 200 OK
+INFO:     192.168.0.2:60786 - "GET /getImage?monthAndDayAndHourAndMinAndImageID=11/27/0/47/21.jpg HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 282, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: './images/11/27/0/47/21.jpg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 64, in app
+    await response(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 285, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path ./images/11/27/0/47/21.jpg does not exist.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 282, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: './images/11/27/0/47/21.jpg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 64, in app
+    await response(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 285, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path ./images/11/27/0/47/21.jpg does not exist.
+INFO:     192.168.0.2:60787 - "GET /getImage?monthAndDayAndHourAndMinAndImageID=11/27/0/47/22.jpg HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 282, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: './images/11/27/0/47/22.jpg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 64, in app
+    await response(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 285, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path ./images/11/27/0/47/22.jpg does not exist.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 282, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: './images/11/27/0/47/22.jpg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 64, in app
+    await response(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 285, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path ./images/11/27/0/47/22.jpg does not exist.
+INFO:     192.168.0.2:60799 - "GET /getImage?monthAndDayAndHourAndMinAndImageID=11/27/0/47/23.jpg HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 282, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: './images/11/27/0/47/23.jpg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 64, in app
+    await response(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 285, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path ./images/11/27/0/47/23.jpg does not exist.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 282, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: './images/11/27/0/47/23.jpg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 64, in app
+    await response(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/responses.py", line 285, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path ./images/11/27/0/47/23.jpg does not exist.
+INFO:     192.168.0.2:60800 - "GET /getImage?monthAndDayAndHourAndMinAndImageID=11/27/0/47/24.jpg HTTP/1.1" 200 OK
+INFO:     192.168.0.47:43730 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.0.47:43730 - "GET /getMonths_images HTTP/1.1" 200 OK
+INFO:     192.168.0.47:43732 - "GET /getMonths_audio HTTP/1.1" 200 OK
+INFO:     192.168.0.47:43740 - "GET /login HTTP/1.1" 200 OK
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     192.168.0.47:43742 - "POST /getToken HTTP/1.1" 403 Forbidden
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     192.168.0.47:43742 - "POST /getToken HTTP/1.1" 403 Forbidden
+INFO:     192.168.0.47:43742 - "GET /login HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET / HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths_images HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths_audio HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     10.20.40.10:0 - "GET /login HTTP/1.1" 200 OK
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.40.10:0 - "POST /getToken HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET / HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths_audio HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths_images HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /beep HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /beep HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /beep HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /beep HTTP/1.1" 200 OK
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:4]
+DEBUG:multipart.multipart:Calling on_field_data with data[5:75]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:root:epd4in2 Demo
+INFO:root:init and Clear
+INFO:root:1.Drawing on the Horizontal image...
+400
+INFO:     10.20.40.10:0 - "POST /text HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 157, in text
+    eink_lib.show(Text)
+  File "./eink_lib.py", line 37, in show
+    textAfterWrap = "\n".join(textwrap.wrap(text, width=400/24*2))
+  File "/usr/lib/python3.7/textwrap.py", line 379, in wrap
+    return w.wrap(text)
+  File "/usr/lib/python3.7/textwrap.py", line 354, in wrap
+    return self._wrap_chunks(chunks)
+  File "/usr/lib/python3.7/textwrap.py", line 297, in _wrap_chunks
+    self._handle_long_word(chunks, cur_line, cur_len, width)
+  File "/usr/lib/python3.7/textwrap.py", line 218, in _handle_long_word
+    cur_line.append(reversed_chunks[-1][:space_left])
+TypeError: slice indices must be integers or None or have an __index__ method
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 157, in text
+    eink_lib.show(Text)
+  File "./eink_lib.py", line 37, in show
+    textAfterWrap = "\n".join(textwrap.wrap(text, width=400/24*2))
+  File "/usr/lib/python3.7/textwrap.py", line 379, in wrap
+    return w.wrap(text)
+  File "/usr/lib/python3.7/textwrap.py", line 354, in wrap
+    return self._wrap_chunks(chunks)
+  File "/usr/lib/python3.7/textwrap.py", line 297, in _wrap_chunks
+    self._handle_long_word(chunks, cur_line, cur_len, width)
+  File "/usr/lib/python3.7/textwrap.py", line 218, in _handle_long_word
+    cur_line.append(reversed_chunks[-1][:space_left])
+TypeError: slice indices must be integers or None or have an __index__ method
+INFO:     10.20.40.10:0 - "GET / HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths_images HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths_audio HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /login HTTP/1.1" 200 OK
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.40.10:0 - "POST /getToken HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET / HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths_images HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths_audio HTTP/1.1" 200 OK
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:4]
+DEBUG:multipart.multipart:Calling on_field_data with data[5:11]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:root:epd4in2 Demo
+INFO:root:init and Clear
+INFO:     10.20.40.10:0 - "GET / HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths_images HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths_audio HTTP/1.1" 200 OK
+INFO:root:1.Drawing on the Horizontal image...
+DEBUG:waveshare_epd.epd4in2:Horizontal
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:4]
+DEBUG:multipart.multipart:Calling on_field_data with data[5:24]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:root:epd4in2 Demo
+INFO:root:init and Clear
+400
+INFO:     10.20.40.10:0 - "GET /beep HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET / HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths_images HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths_audio HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /beep HTTP/1.1" 200 OK
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:4]
+DEBUG:multipart.multipart:Calling on_field_data with data[5:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:root:epd4in2 Demo
+INFO:root:init and Clear
+INFO:root:Goto Sleep...
+INFO:root:1.Drawing on the Horizontal image...
+DEBUG:waveshare_epd.epd4in2:Horizontal
+DEBUG:waveshare_epd.epdconfig:spi end
+DEBUG:waveshare_epd.epdconfig:close 5V, Module enters 0 power consumption ...
+INFO:root:[Errno 9] Bad file descriptor
+400
+INFO:     10.20.40.10:0 - "POST /text HTTP/1.1" 200 OK
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 157, in text
+    eink_lib.show(Text)
+  File "./eink_lib.py", line 40, in show
+    epd.display(epd.getbuffer(Himage))
+  File "/usr/local/lib/python3.7/dist-packages/waveshare_epd-0.0.0-py3.7.egg/waveshare_epd/epd4in2.py", line 454, in display
+    self.send_command(0x92);
+  File "/usr/local/lib/python3.7/dist-packages/waveshare_epd-0.0.0-py3.7.egg/waveshare_epd/epd4in2.py", line 222, in send_command
+    epdconfig.digital_write(self.dc_pin, 0)
+  File "/usr/local/lib/python3.7/dist-packages/waveshare_epd-0.0.0-py3.7.egg/waveshare_epd/epdconfig.py", line 53, in digital_write
+    self.GPIO.output(pin, value)
+RuntimeError: Please set pin numbering mode using GPIO.setmode(GPIO.BOARD) or GPIO.setmode(GPIO.BCM)
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 157, in text
+    eink_lib.show(Text)
+  File "./eink_lib.py", line 40, in show
+    epd.display(epd.getbuffer(Himage))
+  File "/usr/local/lib/python3.7/dist-packages/waveshare_epd-0.0.0-py3.7.egg/waveshare_epd/epd4in2.py", line 454, in display
+    self.send_command(0x92);
+  File "/usr/local/lib/python3.7/dist-packages/waveshare_epd-0.0.0-py3.7.egg/waveshare_epd/epd4in2.py", line 222, in send_command
+    epdconfig.digital_write(self.dc_pin, 0)
+  File "/usr/local/lib/python3.7/dist-packages/waveshare_epd-0.0.0-py3.7.egg/waveshare_epd/epdconfig.py", line 53, in digital_write
+    self.GPIO.output(pin, value)
+RuntimeError: Please set pin numbering mode using GPIO.setmode(GPIO.BOARD) or GPIO.setmode(GPIO.BCM)
+INFO:     10.20.40.10:0 - "GET /beep HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 148, in beep
+    pin = GPIO.PWM(20, 600)
+RuntimeError: Please set pin numbering mode using GPIO.setmode(GPIO.BOARD) or GPIO.setmode(GPIO.BCM)
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 148, in beep
+    pin = GPIO.PWM(20, 600)
+RuntimeError: Please set pin numbering mode using GPIO.setmode(GPIO.BOARD) or GPIO.setmode(GPIO.BCM)
+INFO:     10.20.40.10:0 - "GET /beep HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 148, in beep
+    pin = GPIO.PWM(20, 600)
+RuntimeError: Please set pin numbering mode using GPIO.setmode(GPIO.BOARD) or GPIO.setmode(GPIO.BCM)
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 148, in beep
+    pin = GPIO.PWM(20, 600)
+RuntimeError: Please set pin numbering mode using GPIO.setmode(GPIO.BOARD) or GPIO.setmode(GPIO.BCM)
+INFO:     10.20.40.10:0 - "GET / HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths_images HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths_audio HTTP/1.1" 200 OK
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:4]
+DEBUG:multipart.multipart:Calling on_field_data with data[5:9]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:root:epd4in2 Demo
+INFO:root:init and Clear
+INFO:     10.20.40.10:0 - "GET /beep HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 148, in beep
+    pin = GPIO.PWM(20, 600)
+RuntimeError: You must setup() the GPIO channel as an output first
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 148, in beep
+    pin = GPIO.PWM(20, 600)
+RuntimeError: You must setup() the GPIO channel as an output first
+INFO:     10.20.40.10:0 - "GET / HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths_audio HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths_images HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /beep HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 148, in beep
+    pin = GPIO.PWM(20, 600)
+RuntimeError: You must setup() the GPIO channel as an output first
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 148, in beep
+    pin = GPIO.PWM(20, 600)
+RuntimeError: You must setup() the GPIO channel as an output first
+INFO:     192.168.0.2:61477 - "GET /beep HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 148, in beep
+    pin = GPIO.PWM(20, 600)
+RuntimeError: You must setup() the GPIO channel as an output first
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 148, in beep
+    pin = GPIO.PWM(20, 600)
+RuntimeError: You must setup() the GPIO channel as an output first
+INFO:root:1.Drawing on the Horizontal image...
+DEBUG:waveshare_epd.epd4in2:Horizontal
+400
+INFO:     192.168.0.2:61478 - "GET /beep HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 148, in beep
+    pin = GPIO.PWM(20, 600)
+RuntimeError: You must setup() the GPIO channel as an output first
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 148, in beep
+    pin = GPIO.PWM(20, 600)
+RuntimeError: You must setup() the GPIO channel as an output first
+INFO:root:Goto Sleep...
+DEBUG:waveshare_epd.epdconfig:spi end
+DEBUG:waveshare_epd.epdconfig:close 5V, Module enters 0 power consumption ...
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [3841]
+INFO:uvicorn.error:Finished server process [3841]
+INFO:     Started server process [8317]
+INFO:uvicorn.error:Started server process [8317]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
+INFO:     10.20.41.203:0 - "GET / HTTP/1.1" 200 OK
+INFO:     10.20.41.203:0 - "GET /getMonths_audio HTTP/1.1" 200 OK
+INFO:     10.20.41.203:0 - "GET /getMonths_images HTTP/1.1" 200 OK
+INFO:     10.20.41.203:0 - "GET /beep HTTP/1.1" 200 OK
+INFO:     10.20.41.203:0 - "GET /beep HTTP/1.1" 200 OK
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:4]
+DEBUG:multipart.multipart:Calling on_field_data with data[5:30]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:root:epd4in2 Demo
+INFO:root:init and Clear
+INFO:root:1.Drawing on the Horizontal image...
+DEBUG:waveshare_epd.epd4in2:Horizontal
+INFO:root:Goto Sleep...
+DEBUG:waveshare_epd.epdconfig:spi end
+DEBUG:waveshare_epd.epdconfig:close 5V, Module enters 0 power consumption ...
+400
+INFO:     10.20.41.203:0 - "GET /beep HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 148, in beep
+    pin = GPIO.PWM(20, 600)
+RuntimeError: Please set pin numbering mode using GPIO.setmode(GPIO.BOARD) or GPIO.setmode(GPIO.BCM)
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 148, in beep
+    pin = GPIO.PWM(20, 600)
+RuntimeError: Please set pin numbering mode using GPIO.setmode(GPIO.BOARD) or GPIO.setmode(GPIO.BCM)
+INFO:     10.20.41.203:0 - "GET /login HTTP/1.1" 200 OK
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.41.203:0 - "POST /getToken HTTP/1.1" 200 OK
+INFO:     10.20.41.203:0 - "POST /getToken HTTP/1.1" 200 OK
+INFO:     10.20.41.203:0 - "GET / HTTP/1.1" 200 OK
+INFO:     10.20.41.203:0 - "GET /getMonths_images HTTP/1.1" 200 OK
+INFO:     10.20.41.203:0 - "GET /getMonths_audio HTTP/1.1" 200 OK
+INFO:     10.20.41.203:0 - "GET / HTTP/1.1" 200 OK
+INFO:     10.20.41.203:0 - "GET /getMonths_images HTTP/1.1" 200 OK
+INFO:     10.20.41.203:0 - "GET /getMonths_audio HTTP/1.1" 200 OK
+INFO:     10.20.41.203:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     10.20.41.203:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Finished server process [8317]
+INFO:uvicorn.error:Finished server process [8317]
+ERROR:    Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 624, in lifespan
+    await receive()
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/usr/lib/python3.7/asyncio/queues.py", line 159, in get
+    await getter
+concurrent.futures._base.CancelledError
+
+ERROR:uvicorn.error:Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 624, in lifespan
+    await receive()
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/li
