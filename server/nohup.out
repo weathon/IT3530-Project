@@ -1333,4 +1333,1084 @@ DEBUG:waveshare_epd.epdconfig:spi end
 DEBUG:waveshare_epd.epdconfig:close 5V, Module enters 0 power consumption ...
 400
 INFO:     192.168.0.2:53043 - "POST /text?Text=We%20the%20People%20of%20the%20United%20States%2C%20in%20Order%20to%20form%20a%20more%20perfect%20Union%2C%20establish%20Justice%2C%20insure%20domestic%20Tranquility%2C%20provide%20for%20the%20common%20defence%2C%20promote%20the%20general%20Welfare%2C%20and%20secure%20the%20Blessings%20of%20Liberty%20to%20ourselves%20and%20our%20Posterity%2C%20do%20ordain%20and%20establish%20this%20Constitution%20for%20the%20United%20States%20of%20America. HTTP/1.1" 200 OK
-                                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                             INFO:     Will watch for changes in these directories: ['/root/IT3530-Project/server']
+INFO:     Uvicorn running on http://0.0.0.0:80 (Press CTRL+C to quit)
+INFO:     Started reloader process [1101] using watchgod
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1104]
+INFO:uvicorn.error:Started server process [1104]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
+INFO:     10.20.40.10:0 - "GET /login HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /login HTTP/1.1" 200 OK
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:7]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.40.10:0 - "POST /getToken HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 52, in getToken
+    if sha512(psw + "udfafgfywyftwewtfegft653rf57twgedjhnsbccvfratkedyuhwfegfdtkwygcfwe5tcvwgkycgtw") != \
+TypeError: Unicode-objects must be encoded before hashing
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 52, in getToken
+    if sha512(psw + "udfafgfywyftwewtfegft653rf57twgedjhnsbccvfratkedyuhwfegfdtkwygcfwe5tcvwgkycgtw") != \
+TypeError: Unicode-objects must be encoded before hashing
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [1104]
+INFO:uvicorn.error:Finished server process [1104]
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1125]
+INFO:uvicorn.error:Started server process [1125]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:7]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.41.203:0 - "POST /getToken HTTP/1.1" 403 Forbidden
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.41.203:0 - "POST /getToken HTTP/1.1" 403 Forbidden
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.41.203:0 - "POST /getToken HTTP/1.1" 403 Forbidden
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [1125]
+INFO:uvicorn.error:Finished server process [1125]
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1140]
+INFO:uvicorn.error:Started server process [1140]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.41.203:0 - "POST /getToken HTTP/1.1" 403 Forbidden
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [1140]
+INFO:uvicorn.error:Finished server process [1140]
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1143]
+INFO:uvicorn.error:Started server process [1143]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [1143]
+INFO:uvicorn.error:Finished server process [1143]
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1163]
+INFO:uvicorn.error:Started server process [1163]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.41.203:0 - "POST /getToken HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 67, in getToken
+    signature = pow(myhash, keyPair.d, keyPair.n)
+NameError: name 'keyPair' is not defined
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 67, in getToken
+    signature = pow(myhash, keyPair.d, keyPair.n)
+NameError: name 'keyPair' is not defined
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.41.203:0 - "POST /getToken HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 67, in getToken
+    signature = pow(myhash, keyPair.d, keyPair.n)
+NameError: name 'keyPair' is not defined
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 67, in getToken
+    signature = pow(myhash, keyPair.d, keyPair.n)
+NameError: name 'keyPair' is not defined
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [1163]
+INFO:uvicorn.error:Finished server process [1163]
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1172]
+INFO:uvicorn.error:Started server process [1172]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.41.203:0 - "POST /getToken HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 68, in getToken
+    cookie = msg + "****" + signature
+TypeError: can't concat str to bytes
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 68, in getToken
+    cookie = msg + "****" + signature
+TypeError: can't concat str to bytes
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [1172]
+INFO:uvicorn.error:Finished server process [1172]
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1180]
+INFO:uvicorn.error:Started server process [1180]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.41.203:0 - "POST /getToken HTTP/1.1" 200 OK
+INFO:     10.20.41.203:0 - "GET / HTTP/1.1" 404 Not Found
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.40.10:0 - "POST /getToken HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [1180]
+INFO:uvicorn.error:Finished server process [1180]
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1196]
+INFO:uvicorn.error:Started server process [1196]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.40.10:0 - "POST /getToken HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 71, in getToken
+    cookie = msg_str + "****" + signature
+TypeError: can only concatenate str (not "int") to str
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 71, in getToken
+    cookie = msg_str + "****" + signature
+TypeError: can only concatenate str (not "int") to str
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [1196]
+INFO:uvicorn.error:Finished server process [1196]
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1204]
+INFO:uvicorn.error:Started server process [1204]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.40.10:0 - "POST /getToken HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [1204]
+INFO:uvicorn.error:Finished server process [1204]
+Process SpawnProcess-10:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/subprocess.py", line 76, in subprocess_started
+    target(sockets=sockets)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/server.py", line 68, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "/usr/lib/python3.7/asyncio/runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "uvloop/loop.pyx", line 1501, in uvloop.loop.Loop.run_until_complete
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/server.py", line 76, in serve
+    config.load()
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/config.py", line 448, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./main.py", line 18
+    @app.get("/getMonths")
+    ^
+IndentationError: expected an indented block
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1256]
+INFO:uvicorn.error:Started server process [1256]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.41.203:0 - "POST /getToken HTTP/1.1" 200 OK
+INFO:     10.20.41.203:0 - "GET /login HTTP/1.1" 200 OK
+DEBUG:multipart.multipart:Calling on_field_start with no data
+DEBUG:multipart.multipart:Calling on_field_name with data[0:3]
+DEBUG:multipart.multipart:Calling on_field_data with data[4:22]
+DEBUG:multipart.multipart:Calling on_field_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:     10.20.41.203:0 - "POST /getToken HTTP/1.1" 200 OK
+INFO:     10.20.41.203:0 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [1256]
+INFO:uvicorn.error:Finished server process [1256]
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1268]
+INFO:uvicorn.error:Started server process [1268]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [1268]
+INFO:uvicorn.error:Finished server process [1268]
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+Process SpawnProcess-13:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/subprocess.py", line 76, in subprocess_started
+    target(sockets=sockets)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/server.py", line 68, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "/usr/lib/python3.7/asyncio/runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "uvloop/loop.pyx", line 1501, in uvloop.loop.Loop.run_until_complete
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/server.py", line 76, in serve
+    config.load()
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/config.py", line 448, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./main.py", line 36, in <module>
+    def read_root(jwt: Optional[str] = Cookie(None)):
+NameError: name 'Cookie' is not defined
+INFO:     Stopping reloader process [1101]
+INFO:     Will watch for changes in these directories: ['/root/IT3530-Project/server']
+INFO:     Uvicorn running on http://0.0.0.0:80 (Press CTRL+C to quit)
+INFO:     Started reloader process [1665] using watchgod
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/subprocess.py", line 76, in subprocess_started
+    target(sockets=sockets)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/server.py", line 68, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "/usr/lib/python3.7/asyncio/runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "uvloop/loop.pyx", line 1501, in uvloop.loop.Loop.run_until_complete
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/server.py", line 76, in serve
+    config.load()
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/config.py", line 448, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./main.py", line 36, in <module>
+    def read_root(jwt: Optional[str] = Cookie(None)):
+NameError: name 'Cookie' is not defined
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1713]
+INFO:uvicorn.error:Started server process [1713]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
+INFO:     10.20.40.10:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.20.40.10:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.20.40.10:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.20.40.10:0 - "GET /beep HTTP/1.1" 200 OK
+INFO:     10.20.40.10:0 - "GET /getMonths HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 38, in read_root
+    if checkToken(jwt) != "OK":
+  File "./main.py", line 16, in checkToken
+    part_1,part_2 = token.aplit("--")
+AttributeError: 'NoneType' object has no attribute 'aplit'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 38, in read_root
+    if checkToken(jwt) != "OK":
+  File "./main.py", line 16, in checkToken
+    part_1,part_2 = token.aplit("--")
+AttributeError: 'NoneType' object has no attribute 'aplit'
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [1713]
+INFO:uvicorn.error:Finished server process [1713]
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1729]
+INFO:uvicorn.error:Started server process [1729]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
+INFO:     10.20.41.203:0 - "GET /getMonths HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 38, in read_root
+    if checkToken(jwt) != "OK":
+NameError: name 'jwt' is not defined
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 38, in read_root
+    if checkToken(jwt) != "OK":
+NameError: name 'jwt' is not defined
+INFO:     10.20.41.203:0 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [1729]
+INFO:uvicorn.error:Finished server process [1729]
+./main.py:9: RuntimeWarning: This channel is already in use, continuing anyway.  Use GPIO.setwarnings(False) to disable warnings.
+  GPIO.setup(20, GPIO.OUT)
+INFO:     Started server process [1758]
+INFO:uvicorn.error:Started server process [1758]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
+INFO:     10.20.41.203:0 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.20.41.203:0 - "GET /getMonths HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 38, in read_root
+    if checkToken(jwt_token) != "OK":
+  File "./main.py", line 19, in checkToken
+    if(int(part_1.split("****"))>=time.time):
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'list'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/usr/local/lib/python3.7/dist-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/usr/local/lib/python3.7/dist-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.7/dist-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/to_thread.py", line 29, in run_sync
+    limiter=limiter)
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.7/dist-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "./main.py", line 38, in read_root
+    if checkToken(jwt_token) != "OK":
+  File "./main.py", line 19, in checkToken
+    if(int(part_1.split("****"))>=time.time):
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'list'
+WARNING:  WatchGodReload detected file change in '['/root/IT3530-Project/server/main.py']'. Reloading...
+INFO:     Shutting down
+INFO:uvicorn.error:Shutting down
+INFO:     Waiting for application shutdown.
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:     Finished server process [1758]
+INFO:uvicorn.error:Finished server process [1758]
