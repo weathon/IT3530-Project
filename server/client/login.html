@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+</head>
+<body>
+    <ion-page>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Log In</ion-title>
+            <ion-buttons slot="end" @click="openNotif()">
+              <ion-menu-button auto-hide="false">
+                <ion-icon :icon="notificationsOutline" />
+              </ion-menu-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-header collapse="condense">
+            <ion-toolbar>
+              <ion-title size="large">Log In</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <br/>
+    <ion-item>
+        <ion-label>Password:</ion-label>
+        <ion-input type="password" id="a"></ion-input>
+    </ion-item>
+
+        <ion-button expand="full" shape="round" onclick="go();">Log In</ion-button>
+
+
+    </ion-content>
+    </ion-page>
+
+</body>
+<script>
+    function go()
+    {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", '/getToken', true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        xhr.onload = function() {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                window.location="/"
+            }
+            else{
+                alert("Error");
+            }
+        }
+        xhr.send("psw="+document.getElementById("a").value);
+    }
+</script>
+</html>
