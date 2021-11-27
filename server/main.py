@@ -2,14 +2,15 @@ from typing import Optional
 from fastapi import FastAPI, Form, Response, Cookie
 import os
 from fastapi.responses import HTMLResponse, FileResponse
-import eink_lib
-from RPi import GPIO
-import time
-GPIO.setmode(GPIO.BCM) 
-GPIO.setup(20, GPIO.OUT)
+if os.name == 'posix': #On RPi
+    from RPi import GPIO
+    GPIO.setmode(GPIO.BCM) 
+    import eink_lib
+
+
 #pin = GPIO.PWM(20, 600)
 import random
-
+import time
 app = FastAPI()
 
 
@@ -54,37 +55,42 @@ def read_root(jwt_token: Optional[str] = Cookie(None)):
     ls = os.listdir("./images")
     return ls
 
-@app.get("/getDays_images")
-def read_root(month,jwt_token: Optional[str] = Cookie(None)):
+@app.get("/getDays_images",response_class=HTMLResponse)
+def read_root(month, jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
         return "LOGIN ERROR"
     ls = os.listdir("./images/"+month)
-    return ls
+    f = open("./client/getdays.html","r")
+    html = f.read()
+    f.close()  
+    html = html.replace("{{JSONDATA}}",str(ls)).replace("{{imagesOrAudio}}",'images').replace("{{month}}",month)
+    return html
 
-@app.get("/getHours_images")
+
+@app.get("/getHours_images", response_class=HTMLResponse)
 def read_root(monthAndDay,jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
         return "LOGIN ERROR"
     ls = os.listdir("./images/"+monthAndDay)
-    return ls
+    f = open("./client/gethours.html","r")
+    html = f.read()
+    f.close()  
+    html = html.replace("{{JSONDATA}}",str(ls)).replace("{{imagesOrAudio}}",'images').replace("{{before}}",monthAndDay)
+    return html
 
-@app.get("/getMins_images")
+@app.get("/getMins_images", response_class=HTMLResponse)
 def read_root(monthAndDayAndHour,jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
         return "LOGIN ERROR"
     ls = os.listdir("./images/"+monthAndDayAndHour)
-    return ls
-
-@app.get("/getImages")
-def read_root(monthAndDayAndHourAndMin,jwt_token: Optional[str] = Cookie(None)):
-    # List the videos dir and return the list
-    if checkToken(jwt_token) != "OK":
-        return "LOGIN ERROR"
-    ls = os.listdir("./images/"+monthAndDayAndHourAndMin)
-    return ls
+    f = open("./client/getmin_images.html","r")
+    html = f.read()
+    f.close()  
+    html = html.replace("{{JSONDATA}}",str(ls)).replace("{{imagesOrAudio}}",'images').replace("{{before}}",monthAndDayAndHour)
+    return html
 
 
 @app.get("/getImage")
@@ -107,28 +113,42 @@ def read_root(jwt_token: Optional[str] = Cookie(None)):
     ls = os.listdir("./audio")
     return ls
 
-@app.get("/getDays_audio")
+@app.get("/getDays_audio", response_class=HTMLResponse)
 def read_root(month,jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
         return "LOGIN ERROR"
     ls = os.listdir("./audio/"+month)
-    return ls
+    f = open("./client/getdays.html","r")
+    html = f.read()
+    f.close()  
+    html = html.replace("{{JSONDATA}}",str(ls)).replace("{{imagesOrAudio}}",'audio').replace("{{month}}",month)
+    return html
 
-@app.get("/getHours_audio")
+@app.get("/getHours_audio", response_class=HTMLResponse)
 def read_root(monthAndDay,jwt_token: Optional[str] = Cookie(None)):
+    # print(monthAndDay)
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
         return "LOGIN ERROR"
     ls = os.listdir("./audio/"+monthAndDay)
-    return ls
+    f = open("./client/gethours.html","r")
+    html = f.read()
+    f.close()  
+    html = html.replace("{{JSONDATA}}",str(ls)).replace("{{imagesOrAudio}}",'audio').replace("{{before}}",monthAndDay)
+    return html
 
-@app.get("/getMins_audio")
+@app.get("/getMins_audio", response_class=HTMLResponse)
 def read_root(monthAndDayAndHour,jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
         return "LOGIN ERROR"
-    return FileResponse("./images/"+monthAndDayAndHour)
+    ls = os.listdir("./audio/"+monthAndDayAndHour)
+    f = open("./client/getmin_audio.html","r")
+    html = f.read()
+    f.close()  
+    html = html.replace("{{JSONDATA}}",str(ls)).replace("{{before}}",monthAndDayAndHour)
+    return html
     
 
 
@@ -137,14 +157,15 @@ def read_root(monthAndDayAndHourAndMin,jwt_token: Optional[str] = Cookie(None)):
     # List the videos dir and return the list
     if checkToken(jwt_token) != "OK":
         return "LOGIN ERROR"
-    ls = os.listdir("./audio/"+monthAndDayAndHourAndMin)
-    return ls
+    return FileResponse("./audio/"+monthAndDayAndHourAndMin)
+
 
 
 @app.get("/beep")
 def beep(jwt_token: Optional[str] = Cookie(None)):
     if checkToken(jwt_token) != "OK":
         return "LOGIN ERROR"
+    GPIO.setup(20, GPIO.OUT)
     pin = GPIO.PWM(20, 600)
     pin.start(50) # Duty cycle [14]
     time.sleep(5)

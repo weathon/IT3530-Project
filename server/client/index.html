@@ -88,8 +88,10 @@
 
     xhr.onload = function () {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-            for (var i = 0; i < JSON.parse(this.response).length; i++) {
-                document.getElementById("imageList").innerHTML += `<ion-item><ion-icon name='folder-outline'></ion-icon><ion-label>&nbsp; ${JSON.parse(this.response)[i]}</ion-label></ion-item>`
+            myJson = JSON.parse(this.response)
+            for (var i = 0; i < myJson.length; i++) {
+                myjson = myJson[i]
+                document.getElementById("imageList").innerHTML += `<ion-item href="/getDays_images?month=${myjson}"><ion-icon name='folder-outline'></ion-icon><ion-label>&nbsp; ${myjson}</ion-label></ion-item>`
             }
         }
         else {
@@ -103,8 +105,10 @@
 
     xhr.onload = function () {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            myjson = JSON.parse(this.response)
             for (var i = 0; i < JSON.parse(this.response).length; i++) {
-                document.getElementById("audioList").innerHTML += `<ion-item><ion-icon name='folder-outline'></ion-icon><ion-label>&nbsp; ${JSON.parse(this.response)[i]}</ion-label></ion-item>`
+                item = myjson[i]
+                document.getElementById("audioList").innerHTML += `<ion-item href="/getDays_audio?month=${item}"><ion-icon name='folder-outline'></ion-icon><ion-label>&nbsp; ${item}</ion-label></ion-item>`
             }
         }
         else {

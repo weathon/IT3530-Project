@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+</head>
+
+<body>
+    <ion-app>
+
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>{{imagesOrAudio}}</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list id='list'>
+
+            </ion-list>
+        </ion-content>
+
+
+    </ion-app>
+
+</body>
+<script>
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Text_formatting
+    myJson = {{JSONDATA}}
+    for (var i = 0; i < myJson.length; i++) {
+        myjson = myJson[i]
+        document.getElementById("list").innerHTML += `<ion-item href="/getMins_images?monthAndDayAndHour={{before}}/${myjson}"><ion-icon name='folder-outline'></ion-icon><ion-label>&nbsp; ${myjson}</ion-label></ion-item>`
+    }
+
+
+</script>
+
+</html>
