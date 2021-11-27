@@ -3899,4 +3899,16 @@ concurrent.futures._base.CancelledError
 ERROR:uvicorn.error:Traceback (most recent call last):
   File "/usr/local/lib/python3.7/dist-packages/starlette/routing.py", line 624, in lifespan
     await receive()
-  File "/usr/local/lib/python3.7/dist-packages/uvicorn/li
+  File "/usr/local/lib/python3.7/dist-packages/uvicorn/liINFO:     Will watch for changes in these directories: ['/root/IT3530-Project/server']
+INFO:     Uvicorn running on http://0.0.0.0:80 (Press CTRL+C to quit)
+INFO:     Started reloader process [3048] using watchgod
+INFO:     Started server process [3055]
+INFO:uvicorn.error:Started server process [3055]
+INFO:     Waiting for application startup.
+INFO:uvicorn.error:Waiting for application startup.
+INFO:     Application startup complete.
+INFO:uvicorn.error:Application startup complete.
+INFO:     10.20.40.55:0 - "GET / HTTP/1.1" 200 OK
+INFO:     10.20.40.55:0 - "GET / HTTP/1.1" 200 OK
+INFO:     10.20.40.55:0 - "GET /getMonths_audio HTTP/1.1" 200 OK
+INFO:     10.20.40.55:0 - "GET /getMonths_images HTTP/1.1" 200 OK
